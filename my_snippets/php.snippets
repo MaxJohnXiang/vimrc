@@ -1,0 +1,63 @@
+snippet aop "get ali pay class client" b
+$aop = Yii::$app->alipaySdk->aop;
+endsnippet
+
+snippet alir "import ali request" b
+require_once(Yii::getAlias('@app/components/alipay/aop/request/AlipayTradeRefundRequest.php'));
+endsnippet
+
+snippet naop "alipaySdkNew client" b
+$aop = Yii::$app->alipaySdkNew->aop;
+endsnippet
+
+snippet uca "user can permission" b
+if (Yii::$app->user->can('${1:string}')) {
+
+}
+endsnippet
+
+snippet behaviour "behaviors" b
+    /**
+     * @inheritdoc
+     */
+    public function behaviors() {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['${1:string}'],
+                'rules' => [
+                    [
+                        'actions' => ['$1'],
+                        'allow' => true,
+                        'roles' => ['${2:string}',],
+                    ],
+                ],
+            ],
+        ];
+    }
+endsnippet
+
+snippet accessc "Description" b
+use yii\filters\AccessControl;
+endsnippet
+
+snippet ifuca "Desc" b
+     <?php if (Yii::$app->user->can('${1:string}')): ?>
+
+     <?php endif; ?>
+endsnippet
+snippet visible "Description" b
+'visible' => $user->can('product-count.index'),
+endsnippet
+snippet pd "var_dump" b
+echo '<pre>';
+var_dump(${1:string});
+echo '</pre>';
+exit();
+endsnippet
+snippet var "var dump" b
+var_dump(${1:string});
+endsnippet
+snippet array_get "Description" b
+${3:string} = \yii\helpers\ArrayHelper::getValue(${1:array}, ${2:lookvalue});
+endsnippet
