@@ -78,8 +78,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
-
-
 call plug#end()
 
 if vim_plug_just_installed
