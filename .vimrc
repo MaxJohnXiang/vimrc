@@ -30,7 +30,6 @@ endfunction
 call plug#begin("~/.vim/plugged")
 
 Plug 'vim-scripts/vim-auto-save'
-Plug 'airblade/vim-gitgutter',{'frozen':1}
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/goyo.vim'
@@ -71,10 +70,6 @@ Plug 'nightsense/seagrey'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'w0ng/vim-hybrid'
-Plug 'garbas/vim-snipmate'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
@@ -97,8 +92,16 @@ let g:deoplete#enable_at_startup = 1
 
 
 
-set pyxversion=3
 
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 call plug#end()
 
 if vim_plug_just_installed

@@ -1,4 +1,3 @@
-
 set number
 
  "设置切换Buffer快捷键"
@@ -94,7 +93,8 @@ set clipboard=unnamed
 
 
 " If installed using Homebrew
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+
 nnoremap <silent> <C-f> :Files<CR>
 nmap <C-e> :Buffers<CR>
 let g:fzf_action = { 'ctrl-e': 'edit'  }
@@ -145,7 +145,7 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-set tags=./tags;,tags
+" set tags=./tags;,tags
 
 function! IPhpExpandClass()
     call PhpExpandClass()
@@ -276,23 +276,23 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+" let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 
 " 所生成的数据文件的名称 "
-let g:gutentags_ctags_tagfile = '.tags'
+" let g:gutentags_ctags_tagfile = '.tags'
 
 " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-let s:vim_tags = expand('~/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
-" 检测 ~/.cache/tags 不存在就新建 "
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
-endif
+" let s:vim_tags = expand('~/.cache/tags')
+" let g:gutentags_cache_dir = s:vim_tags
+" " 检测 ~/.cache/tags 不存在就新建 "
+" if !isdirectory(s:vim_tags)
+"    silent! call mkdir(s:vim_tags, 'p')
+" endif
 
-" 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args = ['--languages=php']
-let g:gutentags_ctags_extra_args += ['--exclude=vendor --exclude=assets --exclude=web --exclude=views --exclude=.git --exclude=components -R']
+" " 配置 ctags 的参数 "
+" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+" let g:gutentags_ctags_extra_args = ['--languages=php']
+" let g:gutentags_ctags_extra_args += ['--exclude=vendor --exclude=assets --exclude=web --exclude=views --exclude=.git --exclude=components -R']
 
 
 
@@ -303,3 +303,10 @@ let g:python3_host_prog ="/usr/local/bin/python3"
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+let g:phpcd_autoload_path = '/home/max/.vim/plugged/phpcd.vim/vendor/autoload.php'
+
+
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+
+let g:phpcd_php_cli_executable = 'php7.2'
