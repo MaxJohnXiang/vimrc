@@ -376,5 +376,4 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-nnoremap <silent> <C-f> :Files<CR>
 set cursorline

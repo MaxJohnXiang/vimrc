@@ -29,6 +29,9 @@ function! InstallDependence(info)
     !pip3 install --user pynvim
     !pip2 install --user neovim
 endfunction
+
+
+
 call plug#begin("~/.vim/plugged")
 
 Plug 'vim-scripts/vim-auto-save'
@@ -58,7 +61,7 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'hzchirs/vim-material'
 Plug 'colepeters/spacemacs-theme.vim'
 Plug 'liuchengxu/space-vim-dark'
@@ -72,9 +75,14 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'w0ng/vim-hybrid'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Yggdroot/indentLine'
+Plug 'ap/vim-buftabline'
 
 
 

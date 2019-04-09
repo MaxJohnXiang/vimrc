@@ -40,12 +40,12 @@ nmap <c-n> <Plug>yankstack_substitute_newer_paste
 """"""""""""""""""""""""""""""
 "let g:ctrlp_working_path_mode = 0
 "
-"let g:ctrlp_map = '<c-f>'
-"map <leader>j :CtrlP<cr>
-"map <c-b> :CtrlPBuffer<cr>
+" let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <c-b> :CtrlPBuffer<cr>
 "
-"let g:ctrlp_max_height = 20
-"let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee|assets\|vendor\|components\'
 
 
 """"""""""""""""""""""""""""""
@@ -155,7 +155,6 @@ let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
-\   'php': ['phpcs', 'phpcbf','phpstan']
 \}
 
 let g:ale_php_phan_minimum_severity=1
