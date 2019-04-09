@@ -24,6 +24,11 @@ function! BuildYCM(info)
   endif
 endfunction
 
+function! InstallDependence(info)
+    !pip2 install --user pynvim
+    !pip3 install --user pynvim
+    !pip2 install --user neovim
+endfunction
 call plug#begin("~/.vim/plugged")
 
 Plug 'vim-scripts/vim-auto-save'
@@ -44,7 +49,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'https://github.com/terryma/vim-multiple-cursors.git'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
@@ -68,6 +72,10 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'w0ng/vim-hybrid'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+
+
 
 
 if has('nvim')
@@ -75,9 +83,11 @@ if has('nvim')
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/vim-hug-neovim-rpc', {'do' :function('InstallDependence')}
 endif
 let g:deoplete#enable_at_startup = 1
+
+
 call plug#end()
 
 if vim_plug_just_installed
