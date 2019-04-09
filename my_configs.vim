@@ -40,7 +40,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "you complete me"
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
@@ -260,9 +260,12 @@ let g:comfortable_motion_no_default_key_mappings = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<Down>"
 let g:UltiSnipsJumpBackwardTrigger="<Up>"
-let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsSnippetsDir="/Users/xiangyun/.vim_runtime/my_snippets"
+let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsSnippetsDir="~/.vim_runtime/my_snippets"
 let g:UltiSnipsSnippetDirectories=["UltiSnips","my_snippets"]
+
+
+
 
 
 
@@ -290,6 +293,12 @@ endif
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args = ['--languages=php']
 let g:gutentags_ctags_extra_args += ['--exclude=vendor --exclude=assets --exclude=web --exclude=views --exclude=.git --exclude=components -R']
+
+
+
+set pyxversion=3
+let g:python3_host_prog ="/usr/local/bin/python3"
+
 
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup

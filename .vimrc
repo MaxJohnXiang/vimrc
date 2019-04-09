@@ -24,6 +24,9 @@ function! BuildYCM(info)
   endif
 endfunction
 
+
+
+
 call plug#begin("~/.vim/plugged")
 
 Plug 'vim-scripts/vim-auto-save'
@@ -55,7 +58,7 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'hzchirs/vim-material'
 Plug 'colepeters/spacemacs-theme.vim'
 Plug 'liuchengxu/space-vim-dark'
@@ -68,7 +71,33 @@ Plug 'nightsense/seagrey'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'w0ng/vim-hybrid'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'garbas/vim-snipmate'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Yggdroot/indentLine'
+Plug 'ap/vim-buftabline'
+
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+
+
+
+set pyxversion=3
 
 call plug#end()
 
