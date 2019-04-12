@@ -78,11 +78,14 @@ Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'tmhedberg/SimpylFold'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Yggdroot/indentLine'
+Plug 'SirVer/ultisnips'
 Plug 'ap/vim-buftabline'
+Plug 'tpope/vim-eunuch'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 
 

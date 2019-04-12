@@ -260,7 +260,7 @@ let g:comfortable_motion_no_default_key_mappings = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<Down>"
 let g:UltiSnipsJumpBackwardTrigger="<Up>"
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetsDir="~/.vim_runtime/my_snippets"
 let g:UltiSnipsSnippetDirectories=["UltiSnips","my_snippets"]
 
@@ -303,7 +303,7 @@ let g:python3_host_prog ="/usr/local/bin/python3"
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-let g:phpcd_autoload_path = '/home/max/.vim/plugged/phpcd.vim/vendor/autoload.php'
+let g:phpcd_autoload_path = '~/.vim/plugged/phpcd.vim/vendor/autoload.php'
 
 
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
@@ -313,3 +313,17 @@ let g:phpcd_php_cli_executable = 'php7.2'
 
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+
+
+" Set bin if you have many instalations
+let g:deoplete#sources#ternjs#tern_bin = 'usr/local/lib/node_modules/tern/bin/tern'
+let g:deoplete#sources#ternjs#timeout = 1
+
+
+"Add extra filetypes
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
