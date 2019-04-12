@@ -86,6 +86,7 @@ Plug 'SirVer/ultisnips'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-eunuch'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'vim-scripts/taglist.vim'
 
 
 

@@ -61,3 +61,9 @@ endsnippet
 snippet array_get "Description" b
 ${3:string} = \yii\helpers\ArrayHelper::getValue(${1:array}, ${2:lookvalue});
 endsnippet
+snippet user_id "user_id" b
+Yii::$app->user->id;
+endsnippet
+snippet params "params" b
+Yii::$app->params['${1:string}']
+endsnippet

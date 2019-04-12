@@ -39,53 +39,9 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
-" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"you complete me"
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
-  \   'perl' : ['->'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \   'css': [ 're!^\s{4}', 're!:\s+'],
-  \   'html': [ '</' ],
-  \ }
-
-" hi Pmenu ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
-" hi PmenuSel ctermfg=NONE ctermbg=30 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
-
 
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 
-let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
-
-let g:ycm_python_binary_path = 'python'
-
-
-
-
-"youcompleteme  默认tab  s-tab 和自动补全冲突
-let g:ycm_key_list_select_completion=['<c-n>']
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion=['<c-p>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
-
-let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全
-"nnoremap <leader>lo :lopen<CR> "open locationlist
-"nnoremap <leader>lc :lclose<CR>    "close locationlist
-inoremap <leader><leader> <C-x><C-o>
-"在注释输入中也能补全
-let g:ycm_complete_in_comments = 1
-"在字符串输入中也能补全
-let g:ycm_complete_in_strings = 1
-"注释和字符串中的文字也会被收入补全
-let g:clang_user_options='|| exit 0'
 
 " map <leader>g :Ag<space>
 
@@ -177,17 +133,6 @@ if has("cscope") && filereadable("/usr/bin/cscope")
    endif
 endif
 
-let g:phpcomplete_mappings = {
-  \ 'jump_to_def': ',g',
-  \ 'jump_to_def_tabnew': ',t',
-  \ }
-
-let g:phpcomplete_mappings = {
-   \ 'jump_to_def': '<C-]>',
-   \ 'jump_to_def_split': '<C-D><C-]>',
-   \ 'jump_to_def_vsplit': '<C-D><C-\>',
-   \ 'jump_to_def_tabnew': '<C-D><C-[>',
-   \}
 " let g:debuggerPort = 9003
 
 " vdebug settings
@@ -303,7 +248,7 @@ let g:python3_host_prog ="/usr/local/bin/python3"
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-let g:phpcd_autoload_path = '~/.vim/plugged/phpcd.vim/vendor/autoload.php'
+let g:phpcd_autoload_path = '~/aplum_mis/vendor/autoload.php'
 
 
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
@@ -327,3 +272,6 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'javascript.jsx',
                 \ 'vue',
                 \ ]
+
+nnoremap <silent><leader>8  :TlistToggle<CR>
+set releativenumber
