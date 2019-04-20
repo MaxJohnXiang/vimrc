@@ -67,3 +67,14 @@ endsnippet
 snippet params "params" b
 Yii::$app->params['${1:string}']
 endsnippet
+snippet trans "transaction" b
+        $trans = Yii::$app->${1:db}->beginTransaction();
+        try {
+			${2:string}
+            $trans->commit();
+        } catch (Exception $e) {
+            $trans->rollback();
+            $this->addError('id', json_encode($e->getMessage()));
+            return false;
+        }
+endsnippet
