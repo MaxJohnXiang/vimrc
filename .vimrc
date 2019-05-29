@@ -34,29 +34,19 @@ endfunction
 
 call plug#begin("~/.vim/plugged")
 
-Plug 'vim-scripts/vim-auto-save'
 Plug 'tpope/vim-fugitive'
 Plug 'mileszs/ack.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'amix/open_file_under_cursor.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-expand-region'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'chr4/nginx.vim'
-Plug 'amix/vim-zenroom2'
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
-Plug 'terryma/vim-expand-region'
-Plug 'https://github.com/terryma/vim-multiple-cursors.git'
-Plug 'liuchengxu/vista.vim'
 Plug 'arnaud-lb/vim-php-namespace'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
@@ -69,34 +59,26 @@ Plug 'ashfinal/vim-colors-violet'
 Plug 'altercation/vim-colors-solarized'
 Plug 'thenewvu/vim-colors-sketching'
 Plug 'antlypls/vim-colors-codeschool'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'nightsense/seagrey'
-Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'w0ng/vim-hybrid'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Yggdroot/indentLine'
 Plug 'SirVer/ultisnips'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-eunuch'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'vim-scripts/taglist.vim'
+Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug  'ntpeters/vim-better-whitespace'
+Plug 'mzlogin/vim-markdown-toc'
 
 
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc', {'do' :function('InstallDependence')}
-endif
+
+
+
+
+
 let g:deoplete#enable_at_startup = 1
 
 
@@ -108,10 +90,11 @@ if vim_plug_just_installed
 endif
 
 source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
+" source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 try
 source ~/.vim_runtime/my_configs.vim
 catch
 endtry
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript

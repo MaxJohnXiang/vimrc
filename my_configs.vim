@@ -261,9 +261,9 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 
 
 
-" Set bin if you have many instalations
-let g:deoplete#sources#ternjs#tern_bin = 'usr/local/lib/node_modules/tern/bin/tern'
-let g:deoplete#sources#ternjs#timeout = 1
+" " Set bin if you have many instalations
+" let g:deoplete#sources#ternjs#tern_bin = 'usr/local/lib/node_modules/tern/bin/tern'
+" let g:deoplete#sources#ternjs#timeout = 1
 
 
 "Add extra filetypes
@@ -273,5 +273,9 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'vue',
                 \ ]
 
-nnoremap <silent><leader>8  :TlistToggle<CR>
+nnoremap <silent><leader>8  :TagbarToggle<CR>
+nnoremap <silent><leader>9  :GoTest<CR>
+
+let g:tagbar_left = 1
 set releativenumber
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
