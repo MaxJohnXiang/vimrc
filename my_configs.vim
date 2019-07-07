@@ -277,5 +277,5 @@ nnoremap <silent><leader>8  :TagbarToggle<CR>
 nnoremap <silent><leader>9  :GoTest<CR>
 
 let g:tagbar_left = 1
-set releativenumber
+let g:tagbar_width = 30
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript

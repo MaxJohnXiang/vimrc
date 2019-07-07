@@ -14,21 +14,6 @@ if vim_plug_just_installed
     :execute source .fnameescape(vim_plug_path)
 endif
 
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: installed, updated, or unchanged
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == installed || a:info.force
-    !./install.py
-  endif
-endfunction
-
-function! InstallDependence(info)
-    !pip2 install --user pynvim
-    !pip3 install --user pynvim
-    !pip2 install --user neovim
-endfunction
 
 
 
@@ -60,8 +45,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'thenewvu/vim-colors-sketching'
 Plug 'antlypls/vim-colors-codeschool'
 Plug 'morhetz/gruvbox'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'Yggdroot/indentLine'
 Plug 'SirVer/ultisnips'

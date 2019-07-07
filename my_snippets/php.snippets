@@ -78,3 +78,9 @@ snippet trans "transaction" b
             return false;
         }
 endsnippet
+snippet debug "debug" b
+codecept_debug(${1:bug});
+endsnippet
+snippet getsql "Description" b
+echo $query->createCommand()->getRawSql();
+endsnippet
