@@ -279,3 +279,7 @@ nnoremap <silent><leader>9  :GoTest<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 30
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+let g:python3_host_prog = '/usr/local/bin/python3'
+set nonumber
+
+

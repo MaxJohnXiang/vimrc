@@ -81,3 +81,4 @@ source ~/.vim_runtime/my_configs.vim
 catch
 endtry
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd CursorHold * silent call CocActionAsync('highlight')

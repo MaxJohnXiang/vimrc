@@ -153,7 +153,7 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['jshint'],
-\   'python': ['pylint'],
+\   'python': [],
 \   'php': ['phpstan'],
 \   'go': ['go', 'golint', 'errcheck'],
 \}
@@ -175,7 +175,6 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'php': ['php_cs_fixer'],
-\   'python': ['autopep8', 'yapf'],
 \}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
